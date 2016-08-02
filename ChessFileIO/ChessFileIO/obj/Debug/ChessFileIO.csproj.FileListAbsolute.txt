@@ -1,0 +1,9 @@
+D:\VisualStudio\CSC160 App\ChessFileIO\ChessFileIO\bin\Debug\ChessFileIO.exe.config
+D:\VisualStudio\CSC160 App\ChessFileIO\ChessFileIO\bin\Debug\ChessFileIO.exe
+D:\VisualStudio\CSC160 App\ChessFileIO\ChessFileIO\bin\Debug\ChessFileIO.pdb
+D:\VisualStudio\CSC160 App\ChessFileIO\ChessFileIO\obj\Debug\ChessFileIO.csprojResolveAssemblyReference.cache
+D:\VisualStudio\CSC160 App\ChessFileIO\ChessFileIO\obj\Debug\ChessFileIO.exe
+D:\VisualStudio\CSC160 App\ChessFileIO\ChessFileIO\obj\Debug\ChessFileIO.pdb
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\ChessFileIO\ChessFileIO\bin\Debug\ChessFileIO.exe.config
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\ChessFileIO\ChessFileIO\obj\Debug\ChessFileIO.exe
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\ChessFileIO\ChessFileIO\obj\Debug\ChessFileIO.pdb
