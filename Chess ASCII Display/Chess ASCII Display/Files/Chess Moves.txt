@@ -1,0 +1,37 @@
+RLA1
+RLH1
+RDA8
+RDH8
+Nlb1
+Nlg1
+Ndb8
+Ndg8
+Blc1
+Blf1
+Bdc8
+Bdf8
+Qld1
+Qdd8
+Kle1
+Kde8
+
+PLA2
+PLH2
+pDA7
+PDH7
+Plb2
+Plg2
+Pdb7
+Pdg7
+plc2
+plf2
+pdc7
+pdf7
+ple2
+pde7
+pld2
+pdd7
+
+
+A2 A4
+H2 H3 G2 G4

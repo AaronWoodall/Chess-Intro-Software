@@ -1,0 +1,14 @@
+D:\VisualStudio\Intro to Software\Chess ASCII Display\Chess ASCII Display\bin\Debug\Chess ASCII Display.exe.config
+D:\VisualStudio\Intro to Software\Chess ASCII Display\Chess ASCII Display\bin\Debug\Chess ASCII Display.exe
+D:\VisualStudio\Intro to Software\Chess ASCII Display\Chess ASCII Display\bin\Debug\Chess ASCII Display.pdb
+D:\VisualStudio\Intro to Software\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.csprojResolveAssemblyReference.cache
+D:\VisualStudio\Intro to Software\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.exe
+D:\VisualStudio\Intro to Software\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.pdb
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\bin\Debug\Chess ASCII Display.exe.config
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.exe
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.pdb
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\bin\Debug\Chess ASCII Display.exe
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\bin\Debug\Chess ASCII Display.pdb
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.csprojResolveAssemblyReference.cache
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess_ASCII_Display.Properties.Resources.resources
+C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess ASCII Display\Chess ASCII Display\obj\Debug\Chess ASCII Display.csproj.GenerateResource.Cache
