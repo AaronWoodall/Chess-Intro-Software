@@ -12,15 +12,13 @@ namespace ChessFileIO
         public static void Main(string[] args)
         {
             Program program = new Program();
-            program.ReadFile();
+            program.ReadFile(args[0]);
         }
 
 
-        private void ReadFile()
+        private void ReadFile(string fileName)
         {
-            Console.Write("Please enter path to chess moves:");
 
-            string fileName = Console.ReadLine();
 
             string[] fileLines = System.IO.File.ReadAllLines(fileName);
             string movePattern = @"([A-H][1-8]\s[A-H][1-8])";

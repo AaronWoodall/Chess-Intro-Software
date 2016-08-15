@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess_Piece_Movement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,58 +9,92 @@ namespace Chess_Piece_Movement.Models
 {
     public class Queen : ChessPiece
     {
-        public Queen(string color) : base(color, "Queen")
+        public Queen(PieceColor color) : base(color, Pieces.Queen)
         {
 
         }
 
 
-        public bool CheckMove(int oCol, int oRow, int nCol, int nRow)
+        public List<int[]> GetMoves(int oCol, int oRow)
         {
 
             List<int[]> possibleMoves = new List<int[]>();
 
-            int tempCol = oCol;
-            int tempRow = oRow;
+            int tempOCol = oCol;
+            int tempORow = oRow;
 
             do
             {
-                possibleMoves.Add(new int[] { tempCol++, tempRow++ });
+                possibleMoves.Add(new int[] { tempOCol++, tempORow++ });
             }
-            while (tempCol < 8 && tempRow < 8);
-            do
-            {
-                possibleMoves.Add(new int[] { tempCol--, tempRow-- });
-            }
-            while (tempCol > -1 && tempRow > -1);
-            do
-            {
-                possibleMoves.Add(new int[] { tempCol--, tempRow++ });
-            }
-            while (tempCol > -1 && tempRow < 8);
-            do
-            {
-                possibleMoves.Add(new int[] { tempCol++, tempRow-- });
-            }
-            while (tempCol < 8 && tempRow > -1);
+            while (tempOCol < 8 && tempORow < 8);
+            tempOCol = oCol;
+            tempORow = oRow;
 
-            if (oCol == nCol)
+            do
             {
-                return true;
+                possibleMoves.Add(new int[] { tempOCol--, tempORow-- });
             }
-            else if (oRow == nRow)
+            while (tempOCol > -1 && tempORow > -1);
+            tempOCol = oCol;
+            tempORow = oRow;
+            do
             {
-                return true;
+                possibleMoves.Add(new int[] { tempOCol--, tempORow++ });
             }
-            else if (possibleMoves.Contains(new int[] { nCol, nRow }))
+            while (tempOCol > -1 && tempORow < 8);
+            tempOCol = oCol;
+            tempORow = oRow;
+            do
             {
-                return true;
+                possibleMoves.Add(new int[] { tempOCol++, tempORow-- });
             }
-            else
+            while (tempOCol < 8 && tempORow > -1);
+            tempOCol = oCol;
+            tempORow = oRow;
+            do
             {
-                return false;
+                possibleMoves.Add(new int[] { tempOCol++, tempORow });
+            }
+            while (tempOCol < 8);
+            tempOCol = oCol;
+            tempORow = oRow;
+            do
+            {
+                possibleMoves.Add(new int[] { tempOCol--, tempORow });
+            }
+            while (tempOCol > -1);
+            tempOCol = oCol;
+            tempORow = oRow;
+            do
+            {
+                possibleMoves.Add(new int[] { tempOCol, tempORow++ });
+            }
+            while (tempORow < 8);
+            tempOCol = oCol;
+            tempORow = oRow;
+            do
+            {
+                possibleMoves.Add(new int[] { tempOCol, tempORow-- });
+            }
+            while (tempORow > -1);
+            tempOCol = oCol;
+            tempORow = oRow;
+
+            for (int i = 0; i < possibleMoves.Count; i++)
+            {
+                if (possibleMoves[i][0] < 0 && possibleMoves[i][0] > 7)
+                {
+                    possibleMoves.RemoveAt(i);
+                }
+                else if (possibleMoves[i][1] < 0 && possibleMoves[i][1] > 7)
+                {
+                    possibleMoves.RemoveAt(i);
+                }
             }
 
+
+            return possibleMoves;
         }
     }
 }

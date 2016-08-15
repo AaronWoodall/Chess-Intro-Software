@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\PieceColor.cs" />
+    <Compile Include="Enums\Pieces.cs" />
     <Compile Include="Models\Bishop.cs" />
     <Compile Include="Models\ChessPiece.cs" />
     <Compile Include="Models\King.cs" />

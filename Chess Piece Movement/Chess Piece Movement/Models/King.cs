@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess_Piece_Movement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,12 @@ namespace Chess_Piece_Movement.Models
 {
     public class King : ChessPiece
     {
-        public King(string color) : base(color, "Knight")
+        public King(PieceColor color) : base(color, Pieces.King)
         {
 
         }
 
-        public bool CheckMove(int oCol, int oRow, int nCol, int nRow)
+        public List<int[]> GetMoves(int oCol, int oRow)
         {
 
             List<int[]> possibleMoves = new List<int[]>()
@@ -21,7 +22,7 @@ namespace Chess_Piece_Movement.Models
                 new int[] { oCol, oRow + 1 },
                 new int[] { oCol + 1, oRow + 1 },
                 new int[] { oCol + 1, oRow },
-                new int[] { oCol - 1, oRow + 1 },
+                new int[] { oCol + 1, oRow - 1 },
                 new int[] { oCol, oRow - 1 },
                 new int[] { oCol - 1, oRow - 1 },
                 new int[] { oCol - 1, oRow },
@@ -29,32 +30,19 @@ namespace Chess_Piece_Movement.Models
 
             };
 
-
-            if (oCol == 0)
+            for (int i = 0; i < possibleMoves.Count; i++)
             {
-                possibleMoves.Remove(new int[] { oCol - 1, oRow - 1 });
-                possibleMoves.Remove(new int[] { oCol - 1, oRow });
-                possibleMoves.Remove(new int[] { oCol - 1, oRow + 1 });
+                if (possibleMoves[i][0] < 0 && possibleMoves[i][0] > 7)
+                {
+                    possibleMoves.RemoveAt(i);
+                }
+                else if (possibleMoves[i][1] < 0 && possibleMoves[i][1] > 7)
+                {
+                    possibleMoves.RemoveAt(i);
+                }
             }
 
-            if (oCol == 7)
-            {
-
-                possibleMoves.Remove(new int[] { oCol + 1, oRow + 1 });
-                possibleMoves.Remove(new int[] { oCol + 1, oRow });
-                possibleMoves.Remove(new int[] { oCol - 1, oRow - 1 });
-
-            }
-
-            if (oRow == 0)
-            {
-
-            }
-
-            if (oRow == 7)
-            {
-
-            }
+            return possibleMoves;
 
         }
     }

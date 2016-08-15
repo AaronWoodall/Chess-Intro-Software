@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess_Piece_Movement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,12 @@ namespace Chess_Piece_Movement.Models
     public class Knight : ChessPiece
     {
 
-        public Knight(string color) : base(color, "Knight")
+        public Knight(PieceColor color) : base(color, Pieces.Knight)
         {
 
         }
 
-        public bool CheckMove(int oCol, int oRow, int nCol, int nRow)
+        public List<int[]> GetMoves(int oCol, int oRow)
         {
             List<int[]> possibleMovements = new List<int[]>()
             {
@@ -30,16 +31,19 @@ namespace Chess_Piece_Movement.Models
 
             };
 
-            int[] chosenMove = new int[] { nCol, nRow };
+            for (int i = 0; i < possibleMovements.Count; i++)
+            {
+                if (possibleMovements[i][0] < 0 && possibleMovements[i][0] > 7)
+                {
+                    possibleMovements.RemoveAt(i);
+                }
+                else if (possibleMovements[i][1] < 0 && possibleMovements[i][1] > 7)
+                {
+                    possibleMovements.RemoveAt(i);
+                }
+            }
 
-            if (possibleMovements.Contains(chosenMove))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return possibleMovements;
 
 
         }

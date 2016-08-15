@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess_Piece_Movement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,13 @@ namespace Chess_Piece_Movement.Models
 {
     public class Bishop : ChessPiece
     {
-        public Bishop(string color) : base(color, "Bishop")
+
+        public Bishop(PieceColor color) : base(color, Pieces.Bishop)
         {
 
         }
 
-        public bool CheckMove(int oCol, int oRow, int nCol, int nRow)
+        public List<int[]> GetMoves(int oCol, int oRow)
         {
 
             List<int[]> possibleMoves = new List<int[]>();
@@ -26,31 +28,41 @@ namespace Chess_Piece_Movement.Models
                 possibleMoves.Add(new int[] { tempCol++, tempRow++ });
             }
             while (tempCol < 8 && tempRow < 8);
+            tempCol = oCol;
+            tempRow = oRow;
             do
             {
                 possibleMoves.Add(new int[] { tempCol--, tempRow-- });
             }
             while (tempCol > -1 && tempRow > -1);
+            tempCol = oCol;
+            tempRow = oRow;
             do
             {
                 possibleMoves.Add(new int[] { tempCol--, tempRow++ });
             }
             while (tempCol > -1 && tempRow < 8);
+            tempCol = oCol;
+            tempRow = oRow;
             do
             {
                 possibleMoves.Add(new int[] { tempCol++, tempRow-- });
             }
             while (tempCol < 8 && tempRow > -1);
 
-            if (possibleMoves.Contains(new int[] { nCol, nRow }))
+            for (int i = 0; i < possibleMoves.Count; i++)
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                if (possibleMoves[i][0] < 0 && possibleMoves[i][0] > 7)
+                {
+                    possibleMoves.RemoveAt(i);
+                }
+                else if (possibleMoves[i][1] < 0 && possibleMoves[i][1] > 7)
+                {
+                    possibleMoves.RemoveAt(i);
+                }
             }
 
+            return possibleMoves;
         }
     }
 }

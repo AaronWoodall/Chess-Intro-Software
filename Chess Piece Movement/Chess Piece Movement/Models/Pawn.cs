@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess_Piece_Movement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,40 @@ using System.Threading.Tasks;
 
 namespace Chess_Piece_Movement.Models
 {
-    class Pawn
+    public class Pawn : ChessPiece
     {
+
+        public Pawn(PieceColor Color) : base(Color, Pieces.Pawn)
+        {
+
+        }
+
+        public List<int[]> GetMoves(int oCol, int oRow)
+        {
+            if (Name != Pieces.Empty)
+            {
+                List<int[]> possibleMoves = new List<int[]>()
+                {
+                    new int[] { oCol, oRow + 2 },
+                    new int[] { oCol, oRow + 1 }
+                };
+
+                for (int i = 0; i < possibleMoves.Count; i++)
+                {
+                    if (possibleMoves[i][0] < 0 && possibleMoves[i][0] > 7)
+                    {
+                        possibleMoves.RemoveAt(i);
+                    }
+                    else if (possibleMoves[i][1] < 0 && possibleMoves[i][1] > 7)
+                    {
+                        possibleMoves.RemoveAt(i);
+                    }
+                }
+
+                return possibleMoves;
+            }
+
+            return new List<int[]>();
+        }
     }
 }

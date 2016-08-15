@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chess_Piece_Movement.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,73 +10,69 @@ namespace Chess_Piece_Movement.Models
     public abstract class ChessPiece
     {
 
-        public string Color { get; set; }
-        public string Name { get; set; }
-        public char pieceSymbol { get; set; }
+        public PieceColor Color { get; set; } = PieceColor.Empty;
+        public Pieces Name { get; set; } = Pieces.Empty;
+        public char pieceSymbol { get; set; } = '-';
 
 
-        public ChessPiece(string color, string name)
+        public ChessPiece(PieceColor color = PieceColor.Empty, Pieces name = Pieces.Empty)
         {
             Name = name;
 
-            switch (color.ToUpper())
-            {
-                case "L":
-                    Color = "White";
-                    break;
-                case "D":
-                    Color = "Black";
-                    break;
-            }
+            Color = color;
 
-            if (Color == "White")
+            if (Color == PieceColor.White)
             {
                 switch (Name)
                 {
-                    case "Pawn":
-                        pieceSymbol = 'p';
-                        break;
-                    case "King":
+                    case Pieces.King:
                         pieceSymbol = 'k';
                         break;
-                    case "Queen":
+                    case Pieces.Queen:
                         pieceSymbol = 'q';
                         break;
-                    case "Rook":
-                        pieceSymbol = 'r';
-                        break;
-                    case "Bishop":
+                    case Pieces.Bishop:
                         pieceSymbol = 'b';
                         break;
-                    case "Knight":
+                    case Pieces.Rook:
+                        pieceSymbol = 'r';
+                        break;
+                    case Pieces.Knight:
                         pieceSymbol = 'n';
+                        break;
+                    case Pieces.Pawn:
+                        pieceSymbol = 'p';
                         break;
                 }
 
             }
-            else if (Color == "Black")
+            else if (Color == PieceColor.Black)
             {
                 switch (Name)
                 {
-                    case "Pawn":
-                        pieceSymbol = 'P';
-                        break;
-                    case "King":
+                    case Pieces.King:
                         pieceSymbol = 'K';
                         break;
-                    case "Queen":
+                    case Pieces.Queen:
                         pieceSymbol = 'Q';
                         break;
-                    case "Rook":
-                        pieceSymbol = 'R';
-                        break;
-                    case "Bishop":
+                    case Pieces.Bishop:
                         pieceSymbol = 'B';
                         break;
-                    case "Knight":
+                    case Pieces.Rook:
+                        pieceSymbol = 'R';
+                        break;
+                    case Pieces.Knight:
                         pieceSymbol = 'N';
                         break;
+                    case Pieces.Pawn:
+                        pieceSymbol = 'P';
+                        break;
                 }
+            }
+            else if (Color == PieceColor.Empty)
+            {
+                Name = Pieces.Empty;
             }
 
         }
