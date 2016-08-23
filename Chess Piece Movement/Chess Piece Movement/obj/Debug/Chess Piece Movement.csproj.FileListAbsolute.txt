@@ -10,3 +10,4 @@ C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess Piece Movement\C
 C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess Piece Movement\Chess Piece Movement\bin\Debug\Chess Piece Movement.exe
 C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess Piece Movement\Chess Piece Movement\bin\Debug\Chess Piece Movement.pdb
 C:\Users\Aaron Woodall\Documents\GitHub\Chess-Milestone-1\Chess Piece Movement\Chess Piece Movement\obj\Debug\Chess Piece Movement.csprojResolveAssemblyReference.cache
+sudo nano /etc/cassandra/cassandra.yaml

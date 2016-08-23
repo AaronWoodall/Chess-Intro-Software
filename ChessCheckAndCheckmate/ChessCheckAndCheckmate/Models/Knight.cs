@@ -1,4 +1,4 @@
-﻿using Chess_Piece_Movement.Enums;
+﻿using Chess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +15,19 @@ namespace Chess_Piece_Movement.Models
 
         }
 
-        public List<int[]> GetMoves(int oCol, int oRow)
+        public override void UpdateMoves()
         {
             List<int[]> possibleMovements = new List<int[]>()
             {
 
-                new int[] { oCol + 1,  oRow + 2},
-                new int[] { oCol - 1,  oRow + 2},
-                new int[] { oCol - 2,  oRow - 1},
-                new int[] { oCol - 2,  oRow + 1},
-                new int[] { oCol + 1,  oRow - 2},
-                new int[] { oCol - 1,  oRow - 2},
-                new int[] { oCol + 2,  oRow - 1},
-                new int[] { oCol + 2,  oRow + 1},
+                new int[] { CurrentPos[0] + 1,  CurrentPos[1] + 2},
+                new int[] { CurrentPos[0] - 1,  CurrentPos[1] + 2},
+                new int[] { CurrentPos[0] - 2,  CurrentPos[1] - 1},
+                new int[] { CurrentPos[0] - 2,  CurrentPos[1] + 1},
+                new int[] { CurrentPos[0] + 1,  CurrentPos[1] - 2},
+                new int[] { CurrentPos[0] - 1,  CurrentPos[1] - 2},
+                new int[] { CurrentPos[0] + 2,  CurrentPos[1] - 1},
+                new int[] { CurrentPos[0] + 2,  CurrentPos[1] + 1},
 
             };
 
@@ -43,9 +43,7 @@ namespace Chess_Piece_Movement.Models
                 }
             }
 
-            return possibleMovements;
-
-
+            PossibleMoves = possibleMovements;
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using Chess_Piece_Movement.Enums;
+﻿using Chess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +10,34 @@ namespace Chess_Piece_Movement.Models
     public abstract class ChessPiece
     {
 
-        public PieceColor Color { get; set; } = PieceColor.Empty;
-        public Pieces Name { get; set; } = Pieces.Empty;
-        public char pieceSymbol { get; set; } = '-';
+        /// <summary>
+        /// The color of the piece
+        /// </summary>
+        public PieceColor Color { get; private set; } = PieceColor.Empty;
 
+        /// <summary>
+        /// The name of the piece
+        /// </summary>
+        public Pieces Name { get; private set; } = Pieces.Empty;
 
+        /// <summary>
+        /// The character that is used to be prited out 
+        /// </summary>
+        public char pieceSymbol { get; private set; } = '-';
+        /// <summary>
+        /// The current position of on the board that the piece is at
+        /// </summary>
+        public int[] CurrentPos { get; private set; }
+        /// <summary>
+        /// The possible moves for this piece
+        /// </summary>
+        public List<int[]> PossibleMoves { get; private set; } = new List<int[]>();
+
+        /// <summary>
+        /// Constructer for the chesspiece setting properties based on the Color and name
+        /// </summary>
+        /// <param name="color">Contols the casing of the pieceSymbol</param>
+        /// <param name="name">Contols the character that is the pieceSymbol</param>
         public ChessPiece(PieceColor color = PieceColor.Empty, Pieces name = Pieces.Empty)
         {
             Name = name;
@@ -76,5 +99,10 @@ namespace Chess_Piece_Movement.Models
             }
 
         }
+
+        /// <summary>
+        /// Updates the possible moves 
+        /// </summary>
+        public abstract void UpdateMoves();
     }
 }

@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chess_Piece_Movement.Enums
+namespace Chess.Enums
 {
+
+    /// <summary>
+    /// Enum of all possible colors plus a default empty
+    /// </summary>
     public enum PieceColor
     {
         Black,

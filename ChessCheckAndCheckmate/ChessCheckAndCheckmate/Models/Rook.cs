@@ -1,4 +1,4 @@
-﻿using Chess_Piece_Movement.Enums;
+﻿using Chess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,41 +15,40 @@ namespace Chess_Piece_Movement.Models
 
         }
 
-
-        public List<int[]> GetMoves(int oCol, int oRow)
+        public override void UpdateMoves()
         {
             List<int[]> possibleMoves = new List<int[]>();
-            int tempOCol = oCol;
-            int tempORow = oRow;
+            int tempCol = CurrentPos[0];
+            int tempRow = CurrentPos[1];
 
             do
             {
-                possibleMoves.Add(new int[] { tempOCol++, tempORow });
+                possibleMoves.Add(new int[] { tempCol++, tempRow });
             }
-            while (tempOCol < 8);
-            tempOCol = oCol;
-            tempORow = oRow;
+            while (tempCol < 8);
+            tempCol = CurrentPos[0];
+            tempRow = CurrentPos[1];
             do
             {
-                possibleMoves.Add(new int[] { tempOCol--, tempORow });
+                possibleMoves.Add(new int[] { tempCol--, tempRow });
             }
-            while (tempOCol > -1);
-            tempOCol = oCol;
-            tempORow = oRow;
+            while (tempCol > -1);
+            tempCol = CurrentPos[0];
+            tempRow = CurrentPos[1];
             do
             {
-                possibleMoves.Add(new int[] { tempOCol, tempORow++ });
+                possibleMoves.Add(new int[] { tempCol, tempRow++ });
             }
-            while (tempORow < 8);
-            tempOCol = oCol;
-            tempORow = oRow;
+            while (tempRow < 8);
+            tempCol = CurrentPos[0];
+            tempRow = CurrentPos[1];
             do
             {
-                possibleMoves.Add(new int[] { tempOCol, tempORow-- });
+                possibleMoves.Add(new int[] { tempCol, tempRow-- });
             }
-            while (tempORow > -1);
-            tempOCol = oCol;
-            tempORow = oRow;
+            while (tempRow > -1);
+            tempCol = CurrentPos[0];
+            tempRow = CurrentPos[1];
 
             for (int i = 0; i < possibleMoves.Count; i++)
             {
@@ -63,7 +62,7 @@ namespace Chess_Piece_Movement.Models
                 }
             }
 
-            return possibleMoves;
+            PossibleMoves = possibleMoves;
         }
     }
 }
